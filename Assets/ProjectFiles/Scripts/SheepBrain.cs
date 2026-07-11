@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class SheepBrain : MonoBehaviour
 {
-    private bool isLeader = false;
-    
+    public bool canBeLeader = false;
+    public bool isLeader = false;
+
     public float panicThreshold = 30f;
     public float hungerLevel = 100f;
-    public float hungerThreshold = 50f;
-    public float hungerDrainRate = 3f;
+    public float hungerThreshold = 20f;
+    public float hungerDrainRate = 8f;
     public float eatingRate = 5f;
     public float targetHungerLevel;
     public float safeDistance = 15f;
@@ -163,4 +164,6 @@ public class SheepBrain : MonoBehaviour
             }
         }
     }
+
+    
 }

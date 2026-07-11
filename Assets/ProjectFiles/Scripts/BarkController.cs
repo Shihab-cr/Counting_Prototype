@@ -66,4 +66,8 @@ public class BarkController : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position, barkCollider.radius);
         }
     }
+    public bool GetIsBarking()
+    {
+        return isBarking;
+    }
 }

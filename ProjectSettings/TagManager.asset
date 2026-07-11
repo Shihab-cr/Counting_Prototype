@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FearZone
   - Cattle
+  - Obstacle
   layers:
   - Default
   - TransparentFX

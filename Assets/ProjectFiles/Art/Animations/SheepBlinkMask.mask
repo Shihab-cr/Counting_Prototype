@@ -1,0 +1,383 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SheepBlinkMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Base_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/breast_M_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/breast_M_joint/mamilla3_L_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/breast_M_joint/mamilla3_R_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Rump_L_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Rump_L_joint/Hip_L_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Rump_L_joint/Hip_L_joint/Knee_L_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Rump_L_joint/Hip_L_joint/Knee_L_joint/Ankle_L_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Rump_L_joint/Hip_L_joint/Knee_L_joint/Ankle_L_joint/Toes_L_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Rump_R_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Rump_R_joint/Hip_R_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Rump_R_joint/Hip_R_joint/Knee_R_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Rump_R_joint/Hip_R_joint/Knee_R_joint/Ankle_R_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Rump_R_joint/Hip_R_joint/Knee_R_joint/Ankle_R_joint/Toes_R_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/Neck_M_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/Neck_M_joint/Neck1_M_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/Neck_M_joint/Neck1_M_joint/Head_M_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/Neck_M_joint/Neck1_M_joint/Head_M_joint/Ear1_L_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/Neck_M_joint/Neck1_M_joint/Head_M_joint/Ear1_R_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/Neck_M_joint/Neck1_M_joint/Head_M_joint/Eye_L_joint
+    m_Weight: 1
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/Neck_M_joint/Neck1_M_joint/Head_M_joint/Eye_R_joint
+    m_Weight: 1
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/Neck_M_joint/Neck1_M_joint/Head_M_joint/Jaw_M_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/RumpFront_L_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/RumpFront_L_joint/HipFront_L_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/RumpFront_L_joint/HipFront_L_joint/KneeFront_L_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/RumpFront_L_joint/HipFront_L_joint/KneeFront_L_joint/AnkleFront_L_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/RumpFront_L_joint/HipFront_L_joint/KneeFront_L_joint/AnkleFront_L_joint/ToesFront_L_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/RumpFront_R_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/RumpFront_R_joint/HipFront_R_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/RumpFront_R_joint/HipFront_R_joint/KneeFront_R_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/RumpFront_R_joint/HipFront_R_joint/KneeFront_R_joint/AnkleFront_R_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Spine1_M_joint/Spine2_M_joint/RumpFront_R_joint/HipFront_R_joint/KneeFront_R_joint/AnkleFront_R_joint/ToesFront_R_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Tail0_M_joint
+    m_Weight: 0
+  - m_Path: Base_joint/Root_joint/Pelvis_joint/Tail0_M_joint/Tail1_M_joint
+    m_Weight: 0
+  - m_Path: Goat_Dark
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark1
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark2
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark3
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark4
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark5
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark6
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark7
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark8
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark9
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark10
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark11
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark12
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark13
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark14
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark15
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark16
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark17
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark18
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark19
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark20
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark21
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark22
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark23
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark24
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark25
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark26
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark27
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark28
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark29
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark30
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark31
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark32
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark33
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark34
+    m_Weight: 1
+  - m_Path: Goat_Dark/GoatDark35
+    m_Weight: 1
+  - m_Path: Goat_White
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite1
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite2
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite3
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite4
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite5
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite6
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite7
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite8
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite9
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite10
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite11
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite12
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite13
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite14
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite15
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite16
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite17
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite18
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite19
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite20
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite21
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite22
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite23
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite24
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite25
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite26
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite27
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite28
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite29
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite30
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite31
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite32
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite33
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite34
+    m_Weight: 1
+  - m_Path: Goat_White/GoatWhite35
+    m_Weight: 1
+  - m_Path: Sheep_Cream
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream1
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream2
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream3
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream4
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream5
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream6
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream7
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream8
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream9
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream10
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream11
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream12
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream13
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream14
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream15
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream16
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream17
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream18
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream19
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream20
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream21
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream22
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream23
+    m_Weight: 1
+  - m_Path: Sheep_Cream/SheepCream24
+    m_Weight: 1
+  - m_Path: Sheep_Dark
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark1
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark2
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark3
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark4
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark5
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark6
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark7
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark8
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark9
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark10
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark11
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark12
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark13
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark14
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark15
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark16
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark17
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark18
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark19
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark20
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark21
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark22
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark23
+    m_Weight: 1
+  - m_Path: Sheep_Dark/SheepDark24
+    m_Weight: 1
+  - m_Path: Sheep_White
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite1
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite2
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite3
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite4
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite5
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite6
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite7
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite8
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite9
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite10
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite11
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite12
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite13
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite14
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite15
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite16
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite17
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite18
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite19
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite20
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite21
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite22
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite23
+    m_Weight: 1
+  - m_Path: Sheep_White/SheepWhite24
+    m_Weight: 1

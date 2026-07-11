@@ -16,13 +16,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera mainCamera;
 
     private Vector3 prevDir;
+    private Vector3 movementDir;
+    private bool canMove = true;
     
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         prevDir = transform.forward;
         
-
+        movementDir = transform.forward;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -33,14 +35,19 @@ public class PlayerController : MonoBehaviour
         
         Vector3 cameraForward = mainCamera.transform.forward;
         Vector3 cameraRight = mainCamera.transform.right;
-
         cameraForward.y = 0f;
         cameraRight.y = 0f;
-
+        
         cameraForward.Normalize();
         cameraRight.Normalize();
-
-        Vector3 movementDir = verticalInput*cameraForward+horizontalInput*cameraRight;
+        
+        movementDir = verticalInput*cameraForward+horizontalInput*cameraRight;
+        
+        if (!canMove)
+        {
+            rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
+            return;
+        }
 
         float targetVelocity = Input.GetKey(KeyCode.LeftShift) ? runningVelocity : walkingVelocity;
         if (movementDir == Vector3.zero)
@@ -73,5 +80,14 @@ public class PlayerController : MonoBehaviour
     public float GetRunningVelocity()
     {
         return runningVelocity;
+    }
+
+    public void SetMoveState(bool value)
+    {
+        canMove = value;
+    }
+    public Vector3 GetMovementDir()
+    {
+        return movementDir;
     }
 }

@@ -13,7 +13,7 @@ public class SheepMotor : MonoBehaviour
 
 
     [SerializeField] private float idleVelocity =0f;
-    [SerializeField] private float wanderVelocity = 2f;
+    [SerializeField] private float wanderVelocity = 1f;
     [SerializeField] private float fleeVelocity = 8f;
     [SerializeField] private float panicVelocity = 14f;
     [SerializeField] private float accelerationRate = 75f;
@@ -22,6 +22,8 @@ public class SheepMotor : MonoBehaviour
 
     private bool isMoving = false;
     private bool canSwitchDir = true;
+
+    private bool canMove = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,6 +37,12 @@ public class SheepMotor : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!canMove)
+        {
+            rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
+            return;
+        }
+
         switch(sheepBrain.currentState)
         {
             case SheepBrain.SheepState.Idle:
@@ -114,5 +122,14 @@ public class SheepMotor : MonoBehaviour
     private void ResetSwitchDir()
     {
         canSwitchDir = true;
+    }
+
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
+    }
+    public float GetMaxSpeed()
+    {
+        return panicVelocity;
     }
 }
