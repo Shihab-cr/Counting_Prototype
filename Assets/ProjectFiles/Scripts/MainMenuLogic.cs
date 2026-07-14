@@ -45,6 +45,9 @@ public class MainMenuLogic : MonoBehaviour
     {
         playerCoins = PlayerPrefs.GetInt("Coins", 0);
         if (moneyText != null) moneyText.text = playerCoins.ToString();
+
+        PlayerPrefs.SetInt("Unlocked_dog0", 1);
+
         if (dogLabels.Length > 0)
         {
             for(int i=0;i<dogLabels.Length; i++)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 489063324406949295}
   - component: {fileID: 7329971673140367318}
   - component: {fileID: 6175087309359368692}
-  - component: {fileID: 8405619630010935417}
+  - component: {fileID: 2642615322443123042}
   - component: {fileID: 335195891940659050}
   - component: {fileID: 521106550584000219}
   - component: {fileID: 2842790939546547351}
@@ -97,8 +97,8 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8405619630010935417
-BoxCollider:
+--- !u!136 &2642615322443123042
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -115,9 +115,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.40911472, y: 1, z: 1}
-  m_Center: {x: 0.006595224, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.5084717
+  m_Height: 1.3612576
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.008471727, z: 0.0684824}
 --- !u!114 &335195891940659050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +145,7 @@ MonoBehaviour:
   wanderTimeBoundaries: {x: 5, y: 15}
   idleTimeBoundaries: {x: 2, y: 5}
   panicTimeBoundaries: {x: 5, y: 10}
+  sheepRewardValue: 5
   currentState: 0
 --- !u!114 &521106550584000219
 MonoBehaviour:
@@ -163,6 +166,7 @@ MonoBehaviour:
   accelerationRate: 75
   wanderRotationSpeed: 5
   runRotationSpeed: 80
+  sphereCastRadius: 0.52
 --- !u!54 &2842790939546547351
 Rigidbody:
   m_ObjectHideFlags: 0

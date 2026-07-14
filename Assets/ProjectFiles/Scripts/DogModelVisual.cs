@@ -1,3 +1,4 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 
@@ -7,6 +8,12 @@ public struct DogData
     public string dogName;
     public GameObject dogModel;
     public AudioClip[] dogClips;
+
+    [Header("Collider Settings")]
+    public float capsuleHeight;
+    public float capsuleRadius;
+    public Vector3 capsuleCenter;
+    public float sphereCastRadius;
 }
 
 public class DogModelVisual : MonoBehaviour
@@ -14,7 +21,7 @@ public class DogModelVisual : MonoBehaviour
     private int dogIndex = 0;
     [Header("Dog Models Prefabs")]
     [SerializeField] private DogData[] dogs;
-
+    private PlayerController playerController;
     private AudioSource audioSource;
     void Start()
     {
@@ -35,6 +42,18 @@ public class DogModelVisual : MonoBehaviour
 
         dogIndex = savedDogIndex;
         dogs[dogIndex].dogModel.SetActive(true);
+
+        CapsuleCollider collider = GetComponent<CapsuleCollider>();
+        playerController = GetComponent<PlayerController>();
+        if(collider != null)
+        {
+            collider.height = dogs[dogIndex].capsuleHeight;
+            collider.radius = dogs[dogIndex].capsuleRadius;
+            collider.center = dogs[dogIndex].capsuleCenter;
+        }
+        if (playerController != null) {
+            playerController.sphereCastRadius = dogs[dogIndex].sphereCastRadius;
+        }
     }
 
     public void PlayBark()

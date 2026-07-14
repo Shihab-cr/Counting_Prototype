@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Camera mainCamera;
 
+    public float sphereCastRadius = 0.34f;
+
     private Vector3 prevDir;
     private Vector3 movementDir;
     private bool canMove = true;
@@ -42,7 +44,23 @@ public class PlayerController : MonoBehaviour
         cameraRight.Normalize();
         
         movementDir = verticalInput*cameraForward+horizontalInput*cameraRight;
-        
+
+        if (movementDir.magnitude > 0.1f)
+        {
+            RaycastHit hit;
+            float verticalOffset = 0.5f;
+            float sphereCastDist = 0.5f;
+            Vector3 castOrigin = transform.position + Vector3.up * verticalOffset;
+
+            if(Physics.SphereCast(castOrigin,sphereCastRadius,movementDir,out hit, sphereCastDist))
+            {
+                if (hit.normal.y < 0.1)
+                {
+                    movementDir = Vector3.ProjectOnPlane(movementDir, hit.normal).normalized;
+                }
+            }
+        }
+
         if (!canMove)
         {
             rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
@@ -72,9 +90,10 @@ public class PlayerController : MonoBehaviour
         Quaternion lookAt = Quaternion.LookRotation(prevDir);
         Quaternion currRotation = transform.rotation;
 
-        transform.rotation = Quaternion.Slerp(currRotation, lookAt
-            , rotateSpeed * Time.fixedDeltaTime);
-
+        //transform.rotation = Quaternion.Slerp(currRotation, lookAt, rotateSpeed * Time.fixedDeltaTime);
+        Quaternion targetRotation = Quaternion.Slerp(currRotation,lookAt
+            ,rotateSpeed*Time.fixedDeltaTime);
+        rb.MoveRotation(targetRotation);
     }
 
     public float GetRunningVelocity()
@@ -89,5 +108,15 @@ public class PlayerController : MonoBehaviour
     public Vector3 GetMovementDir()
     {
         return movementDir;
+    }
+
+    private void OnDrawGizmos()
+    {
+        // 1. Match the exact origin of your SphereCast
+        Vector3 castOrigin = transform.position + Vector3.up * 0.5f;
+
+        Gizmos.color = Color.red;
+        // 2. Match the exact radius of your SphereCast (0.3f)
+        Gizmos.DrawWireSphere(castOrigin, 0.3f);
     }
 }

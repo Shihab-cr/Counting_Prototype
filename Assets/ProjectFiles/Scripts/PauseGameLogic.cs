@@ -58,7 +58,9 @@ public class PauseGameLogic : MonoBehaviour
     }
     public void ReturnToMainMenu()
     {
-        //SceneManager.LoadSceneAsync()
+        Time.timeScale = 1.0f;
+        SceneManager.LoadSceneAsync("MainMenuScene");
+
     }
     public void RestartLevel()
     {

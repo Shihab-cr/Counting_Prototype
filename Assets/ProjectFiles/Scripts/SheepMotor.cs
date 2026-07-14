@@ -18,7 +18,9 @@ public class SheepMotor : MonoBehaviour
     [SerializeField] private float panicVelocity = 14f;
     [SerializeField] private float accelerationRate = 75f;
     [SerializeField] private float wanderRotationSpeed = 5f; // Slow, lazy turning
-    [SerializeField] private float runRotationSpeed = 80f;
+    [SerializeField] private float runRotationSpeed = 10f;
+
+    [SerializeField] private float sphereCastRadius = 0.52f;
 
     private bool isMoving = false;
     private bool canSwitchDir = true;
@@ -87,6 +89,17 @@ public class SheepMotor : MonoBehaviour
         }
         else
         {
+            RaycastHit hit;
+            float verticalOffset = 0.5f;
+            float sphereCastDist = 0.5f;
+            Vector3 castOrigin = transform.position + Vector3.up * verticalOffset;
+            if(Physics.SphereCast(castOrigin,sphereCastRadius,movementDir,out hit, sphereCastDist))
+            {
+                if (hit.normal.y < 0.1f)
+                {
+                    movementDir = Vector3.ProjectOnPlane(movementDir, hit.normal).normalized;
+                }
+            }
             previousDir = movementDir;
         }
         Vector3 targetVelocityVector = movementDir * targetVelocity;
@@ -98,7 +111,8 @@ public class SheepMotor : MonoBehaviour
        
         Quaternion targetRotation = Quaternion.LookRotation(previousDir);
         float currentRotationSpeed = (sheepBrain.currentState == SheepBrain.SheepState.Wandering) ? wanderRotationSpeed : runRotationSpeed;
-        rb.rotation = Quaternion.Slerp(rb.rotation, targetRotation, currentRotationSpeed * Time.fixedDeltaTime);
+        rb.MoveRotation(Quaternion.Slerp(rb.rotation, targetRotation
+            , currentRotationSpeed * Time.fixedDeltaTime));
         
     }
 

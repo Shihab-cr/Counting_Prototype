@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PlayerVisual : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator[] allDogsAnimators;
+    private Animator animator;
     [SerializeField] private BarkController barkController;
 
     private PlayerController playerController;
@@ -15,6 +16,9 @@ public class PlayerVisual : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        int currDogIndex = PlayerPrefs.GetInt("CurrDogIndex", 0);
+        if(allDogsAnimators.Length>0 && currDogIndex<allDogsAnimators.Length)
+            animator = allDogsAnimators[currDogIndex];
         rb = GetComponent<Rigidbody>();
         playerController = GetComponent<PlayerController>();
         if(playerController != null)
