@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class SheepBrain : MonoBehaviour
 {
+
+    [Header("Sheep Stats")]
     public bool canBeLeader = false;
     public bool isLeader = false;
-
     public float panicThreshold = 30f;
     public float hungerLevel = 100f;
     public float hungerThreshold = 20f;
@@ -21,11 +22,12 @@ public class SheepBrain : MonoBehaviour
 
     private GameObject player;
     
-
     [SerializeField] private Vector2 wanderTimeBoundaries = new Vector2(5f, 15f);
     [SerializeField] private Vector2 idleTimeBoundaries = new Vector2(2f, 5f);
     [SerializeField] private Vector2 panicTimeBoundaries = new Vector2(5f, 10f);
 
+    [Header("Reward")]
+    [SerializeField] public int sheepRewardValue = 5;
     public enum SheepState
     {
         Idle,

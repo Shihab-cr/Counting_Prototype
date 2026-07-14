@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4642621227997999660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 68459880770931642}
+  - component: {fileID: 3841140725128179444}
+  m_Layer: 0
+  m_Name: OptionsMenuHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &68459880770931642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642621227997999660}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.52146, y: -0.514, z: 13.66364}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3841140725128179444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642621227997999660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7124b969ba4de054f96b6b8dc6fc1074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  masterVolume: {fileID: 0}
+  animalsVolume: {fileID: 0}
+  backgroundVolume: {fileID: 0}
+  cameraSensitivity: {fileID: 0}
+  brightnessLevel: {fileID: 0}
+  mainMixer: {fileID: 24100000, guid: 8b4b35d96969bf842be700c70cfbcd79, type: 2}
+  animalMixer: {fileID: 24100000, guid: f6398c32d77a0f840a79b247285cea37, type: 2}
+  backgroundMixer: {fileID: 24100000, guid: 9edde21624cbff0488f57ac4fae951d4, type: 2}
+  essentialVolume: {fileID: 0}
+  expensiveVolume: {fileID: 0}
+  freeLookCamController: {fileID: 0}
+  baseSpeedX: 100
+  baseSpeedY: 1

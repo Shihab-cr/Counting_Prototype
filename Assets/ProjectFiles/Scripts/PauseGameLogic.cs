@@ -68,8 +68,8 @@ public class PauseGameLogic : MonoBehaviour
     public void ToggleOptionsMenu()
     {
         bool optionsAreVisible = optionsMenuUI.activeSelf;
-        optionsMenuUI.SetActive(optionsAreVisible);
-        pauseMenuUI.SetActive(!optionsAreVisible);
+        optionsMenuUI.SetActive(!optionsAreVisible);
+        pauseMenuUI.SetActive(optionsAreVisible);
     }
     public void ExitGame()
     {
