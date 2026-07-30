@@ -28,6 +28,8 @@ public class SheepBrain : MonoBehaviour
 
     [Header("Reward")]
     [SerializeField] public int sheepRewardValue = 5;
+
+    private SheepMotor sheepMotor;
     public enum SheepState
     {
         Idle,
@@ -46,7 +48,7 @@ public class SheepBrain : MonoBehaviour
         stateTime = Random.Range(idleTimeBoundaries.x, idleTimeBoundaries.y); //initalize the stateTimer for idle state
         currHungerLevel = hungerLevel;
         currFearLevel = 0f;
-    
+        sheepMotor = GetComponent<SheepMotor>();
     }
 
     // Update is called once per frame
@@ -57,6 +59,7 @@ public class SheepBrain : MonoBehaviour
             case SheepState.Idle:
                 // Implement Idle behavior
                 DecreaseHunger();
+                decreaseFear();
                 IdleTimer();
                 break;
             case SheepState.Fleeing:
@@ -67,10 +70,12 @@ public class SheepBrain : MonoBehaviour
                 // Implement Wandering behavior
                 WanderTimer();
                 DecreaseHunger();
+                decreaseFear();
                 break;
             case SheepState.Grazing:
                 // Implement Grazing behavior
                 IncreaseHunger();
+                decreaseFear();
                 break;
             case SheepState.Fighting:
                 // Implement Fighting behavior
@@ -162,6 +167,10 @@ public class SheepBrain : MonoBehaviour
                 else
                 {
                     currentState = SheepState.Fleeing;
+                    if(sheepMotor != null)
+                    {
+                        sheepMotor.ApplyBarkBoost();
+                    }
                 }
             }
         }

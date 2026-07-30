@@ -128,7 +128,7 @@ MonoBehaviour:
   barkDuration: 5
   barkCooldown: 0.5
   barkRadius: 5
-  fearLevel: 15
+  fearLevel: 5
 --- !u!1 &2323128606105198850
 GameObject:
   m_ObjectHideFlags: 0
