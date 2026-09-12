@@ -89,6 +89,7 @@ public class SheepBrain : MonoBehaviour
 
     private void DecreaseHunger()
     {
+        
         currHungerLevel -= hungerDrainRate * Time.deltaTime;
         float offset = 10f;
 
@@ -129,6 +130,12 @@ public class SheepBrain : MonoBehaviour
     
     private void decreaseFear()
     {
+        if(currFearLevel <= 0f)
+        {
+            currFearLevel = 0f;
+            return;
+        }
+
         Transform playerTransform = player.transform;
         if (Vector3.Distance(transform.position, playerTransform.position) > safeDistance)
         {
@@ -136,8 +143,11 @@ public class SheepBrain : MonoBehaviour
             if (currFearLevel <= 0f)
             {
                 currFearLevel = 0f;
-                currentState = SheepState.Idle;
-                stateTime = Random.Range(idleTimeBoundaries.x, idleTimeBoundaries.y); // Reset the timer for idle
+                if (currentState == SheepState.Fleeing || currentState == SheepState.Panicking)
+                {
+                    currentState = SheepState.Idle;
+                    stateTime = Random.Range(idleTimeBoundaries.x, idleTimeBoundaries.y); // Reset the timer for idle
+                }
             }
         }
     }

@@ -62,4 +62,9 @@ public class PlayerVisual : MonoBehaviour
             animator.SetBool("Bark_b", false); 
         }
     }
+    public void TriggerSniffAnimation()
+    {
+        animator.SetTrigger("isSniffing");
+
+    }
 }

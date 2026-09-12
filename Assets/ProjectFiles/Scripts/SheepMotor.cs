@@ -28,6 +28,20 @@ public class SheepMotor : MonoBehaviour
     [SerializeField] private float maxBarkBoostMultiplier = 1.5f;
     [SerializeField] private float boostCooldown = 2f;
     [SerializeField] private float boostDecayRate = 0.5f;
+
+    [Header("Flocking (Boids)")]
+    [SerializeField] private LayerMask sheepLayer; // Critical for performance!
+    [SerializeField] private float flockRadius = 5f; // How far they can "see" other sheep
+    [SerializeField] private float separationRadius = 1.5f; // Personal space bubble
+
+    // These weights let you tune how the flock behaves in the Inspector
+    [SerializeField] private float cohesionWeight = 1.0f;
+    [SerializeField] private float alignmentWeight = 1.0f;
+    [SerializeField] private float separationWeight = 2.0f; // Separation is usually highest so they don't overlap
+    [SerializeField] private float boidsRefreshRate = 0.2f; // Calculate 5 times a second
+    private float boidsTimer = 0f;
+    private Vector3 currentBoidsForce = Vector3.zero;
+
     private float currSpeedMultiplier = 1f;
     private float lastBoostTime = -10f;
 
@@ -105,6 +119,7 @@ public class SheepMotor : MonoBehaviour
         }
         else
         {
+            movementDir = ApplyBoids(movementDir);
             //movementDir = ObstacleAvoidanceLogic(movementDir); //Deprecated method
             movementDir = SmartObstacleAvoidance(movementDir);
             previousDir = movementDir;
@@ -249,5 +264,70 @@ public class SheepMotor : MonoBehaviour
             }
         }
         return moveDir;
+    }
+
+    private Vector3 ApplyBoids(Vector3 baseDirection)
+    {
+        // 1. THE TIMER FIX: Only recalculate the complex math a few times a second
+        boidsTimer -= Time.fixedDeltaTime;
+        if (boidsTimer <= 0f)
+        {
+            boidsTimer = boidsRefreshRate;
+            currentBoidsForce = Vector3.zero; // Reset the force
+
+            Collider[] neighbors = Physics.OverlapSphere(transform.position, flockRadius, sheepLayer);
+
+            if (neighbors.Length > 1)
+            {
+                Vector3 centerOfMass = Vector3.zero;
+                Vector3 averageHeading = Vector3.zero;
+                Vector3 separationAvoidance = Vector3.zero;
+                int flockCount = 0;
+
+                foreach (Collider neighbor in neighbors)
+                {
+                    if (neighbor.gameObject == this.gameObject) continue;
+
+                    Transform neighborTransform = neighbor.transform;
+                    Vector3 diff = transform.position - neighborTransform.position;
+                    float dist = diff.magnitude;
+
+                    centerOfMass += neighborTransform.position;
+                    averageHeading += neighborTransform.forward;
+
+                    if (dist < separationRadius && dist > 0.01f)
+                    {
+                        separationAvoidance += (diff.normalized / dist);
+                    }
+                    flockCount++;
+                }
+
+                if (flockCount > 0)
+                {
+                    centerOfMass /= flockCount;
+                    averageHeading /= flockCount;
+
+                    Vector3 cohesionSteer = (centerOfMass - transform.position).normalized * cohesionWeight;
+                    Vector3 alignmentSteer = averageHeading.normalized * alignmentWeight;
+                    Vector3 separationSteer = separationAvoidance.normalized * separationWeight;
+
+                    // Cache the Boids peer pressure to be used until the next timer tick
+                    currentBoidsForce = cohesionSteer + alignmentSteer + separationSteer;
+                }
+            }
+        }
+
+        // 2. THE SURVIVAL FIX: If we are fleeing or panicking, escaping is 5x more important than flocking
+        float survivalWeight = 1.0f;
+        if (sheepBrain.currentState == SheepBrain.SheepState.Fleeing || sheepBrain.currentState == SheepBrain.SheepState.Panicking)
+        {
+            survivalWeight = 5.0f; // The "Run for your life!" multiplier
+        }
+
+        // Blend the survival instinct with the delayed flocking force
+        Vector3 finalDirection = (baseDirection * survivalWeight) + currentBoidsForce;
+        finalDirection.y = 0f;
+
+        return finalDirection.normalized;
     }
 }

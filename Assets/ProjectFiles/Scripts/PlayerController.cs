@@ -14,13 +14,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float accelerationRate = 75f;
 
     [SerializeField] private Camera mainCamera;
-
+    private DogScentTracker dogSniff;
     public float sphereCastRadius = 0.34f;
 
     private Vector3 prevDir;
     private Vector3 movementDir;
     private bool canMove = true;
-    
+    private PlayerVisual playerVisual;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -29,6 +29,16 @@ public class PlayerController : MonoBehaviour
         movementDir = transform.forward;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        dogSniff = GetComponent<DogScentTracker>();
+        playerVisual = GetComponent<PlayerVisual>();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (dogSniff != null) dogSniff.HandleSniff();
+            if (playerVisual != null) playerVisual.TriggerSniffAnimation();
+        }
     }
     void FixedUpdate()
     {

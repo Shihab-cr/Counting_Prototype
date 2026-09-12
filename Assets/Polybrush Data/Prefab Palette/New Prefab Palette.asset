@@ -207,7 +207,7 @@ MonoBehaviour:
     name: NHP_Grass_A2_H100cm_01b
   - gameObject: {fileID: 3559715334149282251, guid: 690e82997e4e4444e82eb5618e30d953, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 53.45229
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -415,7 +415,7 @@ MonoBehaviour:
     name: NHP_Rock_Cobble_A1_02
   - gameObject: {fileID: 2838337035873830838, guid: 9fa5e6915b0e37843af812cdc047ebc3, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 47.547714
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
